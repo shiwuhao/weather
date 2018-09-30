@@ -49,7 +49,7 @@ class Weather
     /**
      * @param array $guzzleOptions
      */
-    public function setGuzzleOptions(array $guzzleOptions): void
+    public function setGuzzleOptions(array $guzzleOptions)
     {
         $this->guzzleOptions = $guzzleOptions;
     }
