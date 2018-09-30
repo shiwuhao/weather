@@ -1,13 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shiwuhao
- * Date: 2018/9/29
- * Time: 下午4:35
+
+/*
+ * This file is part of the shiwuhao/weather.
+ *
+ * (c) shiwuhao <i@shiwuhao.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Shiwuhao\Weather;
-
 
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
@@ -25,7 +27,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
     public function provides()
     {
         return [
-            Weather::class, 'weather'
+            Weather::class, 'weather',
         ];
     }
 }
