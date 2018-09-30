@@ -1,9 +1,8 @@
 <h1 align="center"> weather </h1>
-[![Build Status](https://travis-ci.org/shiwuhao/weather.svg?branch=master)](https://travis-ci.org/shiwuhao/weather)
 
 <p align="center"> A Weather SDK.</p>
 
-
+[![Build Status](https://travis-ci.org/shiwuhao/weather.svg?branch=master)](https://travis-ci.org/shiwuhao/weather)
 ## Installing
 
 ```shell
