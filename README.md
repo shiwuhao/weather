@@ -3,6 +3,7 @@
 <p align="center"> A Weather SDK.</p>
 
 [![Build Status](https://travis-ci.org/shiwuhao/weather.svg?branch=master)](https://travis-ci.org/shiwuhao/weather)
+![StyleCI build status](https://github.styleci.io/repos/150926862/shield) 
 ## Installing
 
 ```shell
