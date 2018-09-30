@@ -1,21 +1,22 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: shiwuhao
- * Date: 2018/9/29
- * Time: 下午2:17
+
+/*
+ * This file is part of the shiwuhao/weather.
+ *
+ * (c) shiwuhao <i@shiwuhao.me>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Shiwuhao\Weather;
-
 
 use GuzzleHttp\Client;
 use Shiwuhao\Weather\Exceptions\HttpException;
 use Shiwuhao\Weather\Exceptions\InvalidArgumentException;
 
 /**
- * Class Weather
- * @package Shiwuhao\Weather
+ * Class Weather.
  */
 class Weather
 {
@@ -31,6 +32,7 @@ class Weather
 
     /**
      * Weather constructor.
+     *
      * @param $key
      */
     public function __construct(string $key)
@@ -54,12 +56,13 @@ class Weather
         $this->guzzleOptions = $guzzleOptions;
     }
 
-
     /**
      * @param $city
      * @param string $type
      * @param string $format
+     *
      * @return mixed|string
+     *
      * @throws HttpException
      * @throws InvalidArgumentException
      */
@@ -68,23 +71,23 @@ class Weather
         $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
 
         if (!in_array(strtolower($format), ['xml', 'json'])) {
-            throw new InvalidArgumentException('Invalid response format: ' . $format);
+            throw new InvalidArgumentException('Invalid response format: '.$format);
         }
 
         if (!in_array(strtolower($type), ['base', 'all'])) {
-            throw new InvalidArgumentException('Invalid type value(base/all): ' . $type);
+            throw new InvalidArgumentException('Invalid type value(base/all): '.$type);
         }
 
         $query = array_filter([
             'key' => $this->key,
             'city' => $city,
             'output' => $format,
-            'extensions' => $type
+            'extensions' => $type,
         ]);
 
         try {
             $response = $this->getHttpClient()->get($url, [
-                'query' => $query
+                'query' => $query,
             ])->getBody()->getContents();
 
             return 'json' === $format ? json_decode($response, true) : $response;
@@ -96,7 +99,9 @@ class Weather
     /**
      * @param $city
      * @param string $format
+     *
      * @return mixed|string
+     *
      * @throws HttpException
      * @throws InvalidArgumentException
      */
@@ -108,7 +113,9 @@ class Weather
     /**
      * @param $city
      * @param string $format
+     *
      * @return mixed|string
+     *
      * @throws HttpException
      * @throws InvalidArgumentException
      */
